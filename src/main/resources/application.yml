@@ -1,3 +1,6 @@
 app:
   datasource:
-    jdbc-url: jdbc:mongodb:
+    jdbc-url: jdbc:postgresql://localhost:5432/db-spring-api
+    username: psql-admin
+    password: password
+    pool-size: 30
