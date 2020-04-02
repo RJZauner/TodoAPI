@@ -15,7 +15,7 @@ public class PersonService {
 
     private final PersonDao personDao;
 
-    @Autowired //injecting model interface
+    @Autowired //injecting data access interface
     public PersonService(@Qualifier("postgres") PersonDao personDao) {
         this.personDao = personDao;
     }
