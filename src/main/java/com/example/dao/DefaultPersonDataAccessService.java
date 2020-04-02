@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository("fakeDao")
-public class FakePersonDataAccessService implements PersonDao {
+public class DefaultPersonDataAccessService implements PersonDao {
 
     private static List<Person> DB = new ArrayList<>();
 
@@ -52,8 +52,10 @@ public class FakePersonDataAccessService implements PersonDao {
                     if(indexOfPersonToUpdate >= 0) {
                         DB.set(indexOfPersonToUpdate, new Person(id, update.getName()));
                         return 2;
+                    } else {
+                        return 0;
                     }
-                    return 0;
+
                 })
                 .orElse(0);
     }
